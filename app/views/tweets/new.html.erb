@@ -1,0 +1,31 @@
+<h1>(tabetabefood)</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @tweet do |f| %>
+  <div class="field">
+    <%= f.label :料理名 %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :日付 %>
+    <%= f.select :day, 
+      [["A", "A"], 
+      ["B", "B"], 
+      ["C", "C"]], include_blank: "選択して下さい" %>
+  </div>
+  <div class="field">
+    <%= f.label :カロリー %>
+    <%= f.number_field :kcal, :size => 10 %>
+  </div>
+
+   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", tweets_path %>
+
+
+

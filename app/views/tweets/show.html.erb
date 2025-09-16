@@ -1,0 +1,17 @@
+<h1>食べ食べfood</h1>
+<h3>Tweet詳細</h3>
+<div class="tweet">
+ <p>名前: <%= @tweet.name %></p>
+  <p>日付: <%= @tweet.day %></p>
+  <p>カロリー: <%= @tweet.kcal %> kcal</p>
+  <p>作成日: <%= @tweet.created_at %></p>
+</div>
+
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+
+
+
+
+
+

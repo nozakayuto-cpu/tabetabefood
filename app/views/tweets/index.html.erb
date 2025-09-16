@@ -1,0 +1,35 @@
+<h1>自分の題名</h1>
+<h3>一覧ページ</h3>
+<%= link_to "新規投稿へ", new_tweet_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+
+      <% if t.image.attached? %>
+            <%= image_tag t.image, size: '250x200'%>
+        <% end %>
+      <%= link_to t.user.name, user_path(t.user.id) %>
+      <%= t.user.email %>
+      <%= t.name %>
+      <%= t.day %>
+      <%= t.kcal %>
+      <%= link_to "詳細へ", tweet_path(t.id) %>
+       <%= link_to "編集する", edit_tweet_path(t.id) %>
+    <%= button_to "削除する", tweet_path(t.id), method: :delete %> 
+    </div>
+  <% end %>
+</div>
+
+
+<h1>何食べるか診断スタート</h1>
+<%= link_to "診断を始める", new_perfume_path, class: "link" %>
+
+
+
+
+

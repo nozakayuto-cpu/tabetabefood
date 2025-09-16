@@ -1,0 +1,29 @@
+<%= form_for @tweet do |f| %>
+  <div>
+    <%= f.label :name, "名前" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :day, "日付" %><br>
+    <%= f.date_select :day %>
+  </div>
+
+  <div>
+    <%= f.label :kcal, "カロリー" %><br>
+    <%= f.number_field :kcal %>
+  </div>
+
+  <div>
+    <%= f.submit "編集する" %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
